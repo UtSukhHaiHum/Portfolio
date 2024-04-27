@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Display Semibold', sans-serif ;
+    box-sizing: border-box;
+  }
+  body{
+    background: rgb(0, 0, 0);
+    color: rgb(253, 249, 247);
+  }
+  #header{
+    width: 100%;
+    height: 100vh;
+  }
+  .container{
+    padding: 10px 10%;
+   
+    }
+  nav{
+    display: flex;
+    align-items : center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+  
+  
+  }
+  .logo{
+    width: 56px;
+  
+  }
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 30px ;
+  }
+  nav ul li a{
+    color: rgb(253, 249, 247);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    
+  }
+  nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(95, 95, 95);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+  }
+  nav ul li a:hover::after{
+    width: 100%;
+  }
+
+  .card-container {
+    justify-content: center; /* Center cards horizontally */
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards horizontally within container */
+    margin: 20px;
+  }
+  
+  .card {
+    width: 420px; /* Adjust width as needed */
+    height: 350px; /* Adjust height as needed */
+    margin: 10px; /* Optional margin around each card */
+    position: relative; /* For layering elements */
+    overflow: hidden; /* Hide overflowing content initially */
+    cursor: pointer; /* Change cursor to indicate clickability */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Stretch image to fill card */
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%); /* Dark gradient overlay */
+    text-align: center;
+    opacity: 0; /* Hide content initially */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+  }
+  
+  .card:hover .card-content {
+    opacity: 1; /* Reveal content on hover */
+  }
+  
+  /* Optional: Style for expanded cards (using JavaScript) */
+  .card.expanded .card-content {
+    opacity: 1; /* Force content visibility */
+    height: 100%; /* Expand content area */
+  }
